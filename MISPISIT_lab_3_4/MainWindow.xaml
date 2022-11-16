@@ -1,0 +1,26 @@
+﻿<Window x:Class="MISPISIT_lab_3_4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MISPISIT_lab_3_4"
+        mc:Ignorable="d"
+        Title="Панель сотрудников компании Х" Height="600" Width="1234" Loaded="Window_Loaded">
+    <Grid Margin="0,0,10,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="115*"/>
+            <ColumnDefinition Width="170*"/>
+            <ColumnDefinition Width="1148*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dgEmployee" Margin="0,0,277,0" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="3" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path = HireDate}" IsReadOnly="True" Header="Дата найма" Width="200"/>
+                <DataGridTextColumn Binding="{Binding Path = Name}" Header="ФИО" Width="300"/>
+                <DataGridTextColumn Binding="{Binding Path = Salary}" Header="Зарплата" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Path = Position}" Header="Должность" Width="300"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <CheckBox x:Name="NameSorting" Grid.Column="2" Content="Сортировать по имени" HorizontalAlignment="Left" Margin="765,24,0,0" VerticalAlignment="Top" Height="25" Width="190" Checked="NameSorting_Checked" FontSize="14" FontWeight="Bold" Unchecked="NameSorting_Unchecked"/>
+        <CheckBox x:Name="SalarySorting" Grid.Column="2" Content="Сортировать по зарплате" HorizontalAlignment="Left" Margin="765,54,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Checked="SalarySorting_Checked" Unchecked="SalarySorting_Unchecked"/>
+    </Grid>
+</Window>
